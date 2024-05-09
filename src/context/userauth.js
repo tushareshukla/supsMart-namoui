@@ -1,17 +1,17 @@
-import React, { createContext, useContext, useState } from 'react'
-const authContext = createContext(null);
+import { createContext, useContext, useState } from 'react'
+const AuthContext = createContext(null);
 
 
-const authProvider = ({children}) => {
+const AuthProvider = ({children}) => {
     const [userData , setUserData] = useState( JSON.parse(localStorage.getItem("userData")) || {});
 
 
   return (
-    <authContext.Provider value={{userData ,setUserData}}>
+    <AuthContext.Provider value={{userData ,setUserData}}>
         {children}
-    </authContext.Provider>
+    </AuthContext.Provider>
   )
 }
-const userAuth = () => useContext(authContext)
+const userAuth = () => useContext(AuthContext)
 
-export { authProvider , userAuth}
+export { AuthProvider , userAuth}
