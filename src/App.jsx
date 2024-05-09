@@ -1,6 +1,6 @@
 import { ToastBar } from "react-hot-toast";
 import "./App.css";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Products from "./Pages/Products/Products";
 import Login from "./Pages/Login/Login";
@@ -12,7 +12,7 @@ function App() {
     <div className="app">
       {/* <ToastBar position="top-right" /> */}
 
-      <BrowserRouter>
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -22,7 +22,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<Notfound />} />
         </Routes>
-      </BrowserRouter>
+
     </div>
   );
 }
